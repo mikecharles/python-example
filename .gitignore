@@ -1,6 +1,6 @@
 # general things to ignore
-build/
-dist/
+/build/
+/dist/
 *.egg-info/
 *.egg
 *.py[cod]
@@ -11,3 +11,6 @@ __pycache__/
 # due to using tox and pytest
 .tox
 .cache
+
+# due to PyCharm
+/.idea
