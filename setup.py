@@ -10,12 +10,20 @@ from setuptools import setup, find_packages
 # To use a consistent encoding
 from codecs import open
 from os import path
+# Read requirements.txt file for install_requires
+from pip.req import parse_requirements
+
 
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
+
+# Get install requirements
+install_reqs = parse_requirements(here+'/requirements.txt', session=False)
+install_reqs = [str(ir.req) for ir in install_reqs]
+
 
 setup(
     name='sample',
@@ -79,7 +87,7 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['peppercorn'],
+    install_requires=install_reqs,
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
