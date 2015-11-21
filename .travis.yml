@@ -1,11 +1,16 @@
-# this file is *not* meant to cover or endorse the use of travis, but rather to
-# help confirm pull requests to this project.
-
 language: python
-
 python:
-  - "3.5"
-
+- '3.5'
 install: pip install -r requirements.txt
-
 script: py.test
+deploy:
+  provider:
+    provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: mike.e.charles@gmail.com
+  password:
+    secure: KMUgKCYWxLtQcLLb8DF3ZR9QdcH8OjmQom5QPiOxmdmtDh+mrfzy5jXKYkKiygc2Q2W33E5afdjhpK2w60aO4Jrxam5FqwSOyav2eIz41PCmD4pSvUZjq+ax5zzMSMm0S4i4lyXhPKvepH/wD9uO3Z9nvQLxmWzcIZZ7gL1zJODIa4MB9sUYcQeocDN/GYEBQFadftKz/euuAjTVtuUKV3vGrQMy/SmAmx5/B73o2wJvWRxW2YcmYVf6tffvT9TTxoGM6v3Y6dlp76a7VLp2i1yIzqhVZmyctZNlCxxUfmrLweDOyDwjTcPoo7tt4mt/bx5PBI6tR9gU0aKL6ocJfaBTefiSinClqk5xd0i4SuUZ5Us51iqVb9P7cC01uiAtCMmDlM5MwBAx+kud4TQOh8JeeYrmDXMoqv5SY/vzaF0an0kZVqEvWxV6lxcpuGUjeVLMMQVMJTOcvvk9VYEWS+GOc3sNyMGqz7keaEdfi2B7WL3S56B0ggJrPQ9KiY4Z1papu0YNFrPdlyRY+aUB2d54rNlpVAUFsGUL82hSHIEJ9U6x2MLD1+vX8foIrCAHifIwrm1xzIp7JqbOxUYQvysVcJetjMjucNRZJlR5crtggawzoX+rEwYPE2GNiNdqRqF2HpLwoP5gPGED/dqR4z4RAhw10+XT5jbafZpNPr4=
+  organization: mikecharles
+  space: development
+  on:
+    repo: mikecharles/python-example
