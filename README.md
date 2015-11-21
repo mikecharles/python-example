@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mikecharles/python-example.svg?branch=master)](https://travis-ci.org/mikecharles/python-example)
+
 A sample Python project
 =======================
 
