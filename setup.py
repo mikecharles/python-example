@@ -17,7 +17,7 @@ from pip.req import parse_requirements
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 # Get install requirements
@@ -26,7 +26,7 @@ install_reqs = [str(ir.req) for ir in install_reqs]
 
 
 setup(
-    name='sample',
+    name='python_example',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
@@ -102,7 +102,7 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        'sample': ['package_data.dat'],
+        'python_example': ['package_data.dat'],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
@@ -116,7 +116,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'sample=sample:main',
+            'python_example=python_example:main',
         ],
     },
 )
